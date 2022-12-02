@@ -26,5 +26,5 @@ Python (GDAL,geopandas,numpy,rasterio,pandas,matplotlib,seaborn,pylandtemp) , QG
 
 #### Maps 
 <div>
-  <img src='https://github.com/shiwakotisurendra/Master-thesis-Surendra/blob/master/thesis-1.gif'>
+  <img src='https://github.com/shiwakotisurendra/Master-thesis-Surendra/blob/master/thesis-1.gif' height=200px>
 </div>
