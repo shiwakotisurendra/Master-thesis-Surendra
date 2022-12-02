@@ -20,7 +20,7 @@ Python (GDAL,geopandas,numpy,rasterio,pandas,matplotlib,seaborn,pylandtemp) , QG
 
 #### Land Surface Temperature (2013-2021)
 <div>
-  <img src='https://github.com/shiwakotisurendra/Master-thesis-Surendra/blob/master/LSTT.gif' style={position: 'center'}>
+  <img src='https://github.com/shiwakotisurendra/Master-thesis-Surendra/blob/master/LSTT.gif' style='position:center'>
 </div>
 
 
