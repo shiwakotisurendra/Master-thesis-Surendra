@@ -3,6 +3,12 @@
 ## Master of Science in Geoinformatics 
 ## University of Münster, Germany
 
+#### Study Area: Bharatpur , Nepal
+
+#### Data Source: 
+````Boundary data: Department of Survey, Nepal````
+````Raster data: United States Geological Survey (earthexplorer)````
+
 #### Mapping and visualization tools: 
 ````
 Python (GDAL,geopandas,numpy,rasterio,pandas,matplotlib,seaborn,pylandtemp) , QGIS
