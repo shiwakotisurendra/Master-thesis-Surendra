@@ -10,7 +10,6 @@
 Boundary data: Department of Survey, Nepal
 Raster data: United States Geological Survey (earthexplorer)
 ````
-
 #### Mapping and visualization tools: 
 ````
 Python (GDAL,geopandas,numpy,rasterio,pandas,matplotlib,seaborn,pylandtemp) , QGIS
