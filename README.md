@@ -4,4 +4,4 @@
 
 ![alt text](https://github.com/shiwakotisurendra/Master-thesis-Surendra/blob/master/uhi_all.png)
 
-![alt text](https://github.com/shiwakotisurendra/Master-thesis-Surendra/blob/master/thesis.mp4)
+![alt text](https://github.com/shiwakotisurendra/Master-thesis-Surendra/blob/master/thesis.gif)
