@@ -16,7 +16,9 @@ Raster data: United States Geological Survey (earthexplorer)
 Python (GDAL,geopandas,numpy,rasterio,pandas,matplotlib,seaborn,pylandtemp) , QGIS
 ````
 #### Land Use Land Cover Maps (2013-2021)
-![alt text](https://github.com/shiwakotisurendra/Master-thesis-Surendra/blob/master/lulc.gif)
+<div>
+  <img src='https://github.com/shiwakotisurendra/Master-thesis-Surendra/blob/master/lulc.gif' style='position:center' width=400px>
+</div>
 
 #### Land Surface Temperature (2013-2021)
 <div>
@@ -26,5 +28,5 @@ Python (GDAL,geopandas,numpy,rasterio,pandas,matplotlib,seaborn,pylandtemp) , QG
 
 #### Maps 
 <div>
-  <img src='https://github.com/shiwakotisurendra/Master-thesis-Surendra/blob/master/thesis-1.gif' height=200px>
+  <img src='https://github.com/shiwakotisurendra/Master-thesis-Surendra/blob/master/thesis-1.gif' height=400px>
 </div>
