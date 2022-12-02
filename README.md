@@ -4,7 +4,7 @@
 
 ### Topic: Identifying urban growth patterns and urban heat island effects of Bharatpur metropolitan city using the Landsat time series imagery
 
-#### Tools used: 
+#### Mapping and visualization tools: 
 ````
 Python (GDAL,geopandas,numpy,rasterio,pandas,matplotlib,seaborn,pylandtemp) , QGIS
 ````
