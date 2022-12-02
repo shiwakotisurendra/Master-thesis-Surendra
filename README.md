@@ -17,16 +17,16 @@ Python (GDAL,geopandas,numpy,rasterio,pandas,matplotlib,seaborn,pylandtemp) , QG
 ````
 #### Land Use Land Cover Maps (2013-2021)
 <div>
-  <img src='https://github.com/shiwakotisurendra/Master-thesis-Surendra/blob/master/lulc.gif' style='position:center' width=400px>
+  <img src='https://github.com/shiwakotisurendra/Master-thesis-Surendra/blob/master/images/lulc.gif' style='position:center' width=400px>
 </div>
 
 #### Land Surface Temperature (2013-2021)
 <div>
-  <img src='https://github.com/shiwakotisurendra/Master-thesis-Surendra/blob/master/LSTT.gif' style='position:center'>
+  <img src='https://github.com/shiwakotisurendra/Master-thesis-Surendra/blob/master/images/LSTT.gif' style='position:center'>
 </div>
 
 
 #### Maps 
 <div>
-  <img src='https://github.com/shiwakotisurendra/Master-thesis-Surendra/blob/master/thesis-1.gif' height=400px>
+  <img src='https://github.com/shiwakotisurendra/Master-thesis-Surendra/blob/master/images/thesis-1.gif' height=400px>
 </div>
