@@ -4,4 +4,4 @@
 
 ![alt text](https://github.com/shiwakotisurendra/Master-thesis-Surendra/blob/master/uhi_all.png)
 
-<video src='https://github.com/shiwakotisurendra/Master-thesis-Surendra/blob/master/thesis.mp4' width=180/>
+<video src='thesis.mp4' width=180/>
