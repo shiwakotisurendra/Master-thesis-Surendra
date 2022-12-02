@@ -9,7 +9,6 @@
 ````
 Boundary data: Department of Survey, Nepal
 ````
-
 ````
 Raster data: United States Geological Survey (earthexplorer)
 ````
