@@ -22,4 +22,6 @@ Python (GDAL,geopandas,numpy,rasterio,pandas,matplotlib,seaborn,pylandtemp) , QG
 ![alt text](https://github.com/shiwakotisurendra/Master-thesis-Surendra/blob/master/LSTT.gif)
 
 #### Maps 
+<div>
 ![alt text](https://github.com/shiwakotisurendra/Master-thesis-Surendra/blob/master/thesis-1.gif)
+</div>
