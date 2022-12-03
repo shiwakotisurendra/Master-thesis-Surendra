@@ -4,7 +4,9 @@
 ## University of Münster, Germany
 
 #### Study Area: Bharatpur , Nepal
-![alt text](https://github.com/shiwakotisurendra/Master-thesis-Surendra/blob/master/aoi.jpg)
+<div>
+  <img src='https://github.com/shiwakotisurendra/Master-thesis-Surendra/blob/master/images/aoi.jpg' style='position:center'>
+</div>
 
 #### Data Source: 
 ````
