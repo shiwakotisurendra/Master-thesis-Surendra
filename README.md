@@ -25,6 +25,11 @@ Python (GDAL,geopandas,numpy,rasterio,pandas,matplotlib,seaborn,pylandtemp) , QG
   <img src='https://github.com/shiwakotisurendra/Master-thesis-Surendra/blob/master/images/LSTT.gif' style='position:center'>
 </div>
 
+####  Urban Heat Island Effect (2013-2021)
+<div>
+  <img src='https://github.com/shiwakotisurendra/Master-thesis-Surendra/blob/master/images/uhi.gif' style='position:center'>
+</div>
+
 
 #### Maps 
 <div>
