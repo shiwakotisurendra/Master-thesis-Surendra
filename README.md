@@ -19,7 +19,7 @@ Python (GDAL,geopandas,numpy,rasterio,pandas,matplotlib,seaborn,pylandtemp) , QG
 ````
 #### Land Use Land Cover Maps (2013-2021)
 <div>
-  <img src='https://github.com/shiwakotisurendra/Master-thesis-Surendra/blob/master/images/lulc.gif' style='position:center' width=400px>
+  <img src='https://github.com/shiwakotisurendra/Master-thesis-Surendra/blob/master/images/lulc.gif' style='position:center'>
 </div>
 
 #### Land Surface Temperature (2013-2021)
