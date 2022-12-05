@@ -4,7 +4,8 @@
 ## University of Münster, Germany
 
 #### Abstract
-<p style="text-align:justify">Determination of spatial extent of the
+````
+Determination of spatial extent of the
 earth’s features, spectral coverage, and temporal analysis of geographic features are used to
 delineate the ecological degradation and distortions in the earth’s landscape with high
 precision using the advanced image processing sensor of satellites. Rapid population growth,
@@ -27,7 +28,8 @@ distribution for different land cover categories. The results show that Builtup 
 uncultivated areas were increasing rapidly in the compensation of forest and agriculture
 areas. High moisture coverage in water bodies, forests, and agriculture contributed to nonUHI. Low UHI occur in sparsely distributed Builtup and uncultivated areas, while clustered Builtup and uncultivated areas were in dense UHI zones. This project will serve as a reference
 for spatiotemporal and statistical analysis for detecting land cover trends, Urban Heat Island
-occurrence and, surface temperature distribution across different land surface features. </p>
+occurrence and, surface temperature distribution across different land surface features.
+````
 
 #### Study Area: Bharatpur , Nepal
 <div>
