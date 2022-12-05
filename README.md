@@ -4,7 +4,7 @@
 ## University of Münster, Germany
 
 #### Abstract
-<p style="text-align:justify">Determination of spatial extent of the
+<p style="align:justify">Determination of spatial extent of the
 earth’s features, spectral coverage, and temporal analysis of geographic features are used to
 delineate the ecological degradation and distortions in the earth’s landscape with high
 precision using the advanced image processing sensor of satellites. Rapid population growth,
