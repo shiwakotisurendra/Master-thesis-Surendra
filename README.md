@@ -36,11 +36,11 @@ Python (GDAL,geopandas,numpy,rasterio,pandas,matplotlib,seaborn,pylandtemp) , QG
   <img src='https://github.com/shiwakotisurendra/Master-thesis-Surendra/blob/master/images/uhi.gif' style='position:center'>
 </div>
 
-
 #### Maps 
 <div>
   <img src='https://github.com/shiwakotisurendra/Master-thesis-Surendra/blob/master/images/thesis-1.gif' height=400px>
 </div>
+
 #### NDVI and NDMI 
 <div>
   <img src='https://github.com/shiwakotisurendra/Master-thesis-Surendra/blob/master/images/ndvi.gif' height=400px>
