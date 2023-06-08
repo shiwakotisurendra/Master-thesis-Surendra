@@ -8,7 +8,7 @@
 * Study area
 * Data Source 
 * Mapping and Visualization tools
-* Outputs
+* Outputs:
    * Land Use Land Cover Maps
    * Land Surface Temperature 
    * Urban Heat Island Effect
