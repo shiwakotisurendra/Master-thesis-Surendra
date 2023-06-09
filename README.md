@@ -35,27 +35,27 @@ Python (GDAL,geopandas,numpy,rasterio,pandas,matplotlib,seaborn,pylandtemp) , QG
 ````
 #### Land Use Land Cover Maps (2013-2021)
 <div>
-  <img src='/images/lulc.gif' style='position:center;border:solid 2px';>
+  <img src='/Templates/images/lulc.gif' style='position:center;border:solid 2px';>
 </div>
 
 #### Land Surface Temperature (2013-2021)
 <div>
-  <img src='/images/LSTT.gif' style='position:center;border:solid 2px';>
+  <img src='/Templates/images/LSTT.gif' style='position:center;border:solid 2px';>
 </div>
 
 ####  Urban Heat Island Effect (2013-2021)
 <div>
-  <img src='/images/uhi.gif' style='position:center;border:solid 2px';>
+  <img src='/Templates/images/uhi.gif' style='position:center;border:solid 2px';>
 </div>
 
 #### Maps 
 <div>
-  <img src='/images/thesis-1.gif' height=400px style='position:center;border:solid 2px'>
+  <img src='/Templates/images/thesis-1.gif' height=400px style='position:center;border:solid 2px'>
 </div>
 
 #### NDVI and NDMI 
 <div>
-  <img src='/images/ndvi.gif' height=400px style='position:right;border:solid 2px' >
-  <img src='/images/ndmi.gif' height=400px style='position:right;border:solid 2px'>
+  <img src='/Templates/images/ndvi.gif' height=400px style='position:right;border:solid 2px' >
+  <img src='/Templates/images/ndmi.gif' height=400px style='position:right;border:solid 2px'>
 </div>
 
