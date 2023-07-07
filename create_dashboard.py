@@ -3,6 +3,7 @@ import streamlit as st  # pip install streamlit
 import matplotlib.pyplot as plt
 from PIL import Image
 import os
+from pathlib import Path
 
 # emojis: https://www.webfx.com/tools/emoji-cheat-sheet/
 st.set_page_config(page_title="Sales Dashboard",
@@ -22,8 +23,7 @@ df = get_data_from_excel()
 
 @st.cache_data
 def image_open(filename):
-    base_path = os.path.dirname(os.path.abspath(__file__))
-    image_path = os.path.join(base_path, 'maps', 'uhi', 'latest', f'{filename}.png')
+    image_path=Path(__file__).parent +f'/maps/uhi/latest/{filename}.png'
     image1 = Image.open(image_path)
 
     st.image(image1, use_column_width='always',caption=f'Map for {filename}')
