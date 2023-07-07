@@ -22,7 +22,9 @@ df = get_data_from_excel()
 
 @st.cache_data
 def image_open(filename):
-    image1 = Image.open(f'{os.path.dirname(__file__)}/maps/uhi/latest/{filename}.png')
+    base_path = os.path.dirname(os.path.abspath(__file__))
+    image_path = os.path.join(base_path, 'maps', 'uhi', 'latest', f'{filename}.png')
+    image1 = Image.open(image_path)
 
     st.image(image1, use_column_width='always',caption=f'Map for {filename}')
 # st.dataframe(df)
