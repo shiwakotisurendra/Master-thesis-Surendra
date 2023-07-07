@@ -2,6 +2,7 @@ import pandas as pd  # pip install pandas openpyxl
 import streamlit as st  # pip install streamlit
 import matplotlib.pyplot as plt
 from PIL import Image
+import os
 
 # emojis: https://www.webfx.com/tools/emoji-cheat-sheet/
 st.set_page_config(page_title="Sales Dashboard",
@@ -21,7 +22,7 @@ df = get_data_from_excel()
 
 @st.cache_data
 def image_open(filename):
-    image1 = Image.open(f'/app/master-thesis-surendra/maps/UHI/latest/{filename}.png')
+    image1 = Image.open(f'{os.path.dirname(__file__)}/maps/UHI/latest/{filename}.png')
 
     st.image(image1, use_column_width='always',caption=f'Map for {filename}')
 # st.dataframe(df)
