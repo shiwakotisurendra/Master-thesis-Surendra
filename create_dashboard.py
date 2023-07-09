@@ -4,13 +4,12 @@ import matplotlib.pyplot as plt
 from PIL import Image
 import os
 from pathlib import Path
+import csv
+from streamlit_option_menu import option_menu
 
 # emojis: https://www.webfx.com/tools/emoji-cheat-sheet/
 st.set_page_config(page_title="Sales Dashboard",
                    page_icon=":bar_chart:", layout="wide")
-
-# ---- READ EXCEL ----
-
 
 @st.cache_data
 def get_data_from_excel():
@@ -181,6 +180,96 @@ with g3:
 
 
 st.markdown('----')
+
+# ---- READ EXCEL ----
+# Initialize like and comment counts
+like_count = 0
+comment_count = 0
+
+# Add like button
+if st.button("Like"):
+    like_count += 1
+
+# Add comment text input and button
+comment_input = st.text_input("Comment")
+if st.button("Add Comment"):
+    comment = comment_input.strip()
+    if comment:
+        comment_count += 1
+        st.write(f"Comment #{comment_count}: {comment}")
+
+
+# File path for storing the view count
+VIEW_COUNT_FILE = "view_count.csv"
+
+@st.cache_data
+def increment_view_count():
+    # Check if the file exists
+    if not os.path.isfile(VIEW_COUNT_FILE):
+        # Create the file and initialize the count to 0
+        with open(VIEW_COUNT_FILE, "w", newline="") as file:
+            writer = csv.writer(file)
+            writer.writerow(["count", 0])
+
+    # Read the current count
+    with open(VIEW_COUNT_FILE, "r", newline="") as file:
+        reader = csv.reader(file)
+        rows = list(reader)
+
+    if not rows or len(rows[0]) < 2:
+        # Handle empty file or missing count value
+        count = 0
+    else:
+        count = int(rows[0][1])
+
+    # Increment the count
+    count += 1
+
+    # Update the count in the file
+    with open(VIEW_COUNT_FILE, "w", newline="") as file:
+        writer = csv.writer(file)
+        writer.writerow(["count", count])
+
+    return count
+
+
+# Get the current view count
+view_count = increment_view_count()
+
+
+# # as a horizontal menu
+# selected = option_menu(
+#         menu_title=None,
+#         options=["Likes", "Comments", "Views"],
+#         icons=["hand-thumbs-up-fill", "pencil-fill", "eye-fill"],
+#         menu_icon="cast",
+#         default_index=0,
+#         orientation="horizontal",
+#         styles={
+#             "container": {"padding": "0!important", "background-color": "lightblue"},
+#             "icon": {"color": "orange", "font-size":"25px"},
+#             "nav-link": {
+#                 "font-size": "25px",
+#                 "text-align": "left",
+#                 "margin": "0px",
+#                 "--hover-color": "#eee",
+#             },
+#             "nav-link-selected":{"background-color": "green"},
+
+#         }
+#     )
+# Display the view count on the webpage
+# Display like and comment counts
+
+st.write("""
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/bootstrap-icons.min.css" rel="stylesheet">    
+""", unsafe_allow_html=True)
+st.write(f"Likes: <i class='bi bi-eye-fill'></i>{like_count}",unsafe_allow_html=True)
+st.write(f"Comments: <i class='bi bi-pen-fill'></i>{comment_count}",unsafe_allow_html=True)
+st.write(f"Views: <i class='bi bi-eye-fill'></i>{view_count}",unsafe_allow_html=True)
+
+
 # ---- HIDE STREAMLIT STYLE ----
 hide_st_style = """
             <style>
