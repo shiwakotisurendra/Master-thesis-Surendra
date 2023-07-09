@@ -183,7 +183,6 @@ st.markdown('----')
 # ---- READ EXCEL ----
 # Initialize like and comment counts
 
-@st.cache_data
 def load_data():
     try:
         data = pd.read_csv("comments_like.csv")
@@ -191,14 +190,14 @@ def load_data():
         data = pd.DataFrame({'Likes': [0], 'Comments': [None], 'Comments_count': 0})
     return data
 
-@st.cache_data
+
 def save_comment(data, comment):
     comment_df = pd.DataFrame({'Comments': [comment]})
     data = pd.concat([data, comment_df], ignore_index=True)
     data['Comments_count'] = len(data)-1
     return data
 
-@st.cache_data
+
 def save_data(data):
     data.to_csv("comments_like.csv", index=False)
 
@@ -229,27 +228,6 @@ else:
 
 # Save data to CSV
 save_data(data)
-
-# # Add like button
-# if st.button("Like"):
-#     like_count += 1
-#     with open("comments_like.csv", "a", newline="") as file:
-#         writer = csv.writer(file)
-#         writer.writerow([comment, comment.index + 1, like_count])
-
-
-# # Add comment text input and button
-# comment_input = st.text_input("Comment")
-# if st.button("Add Comment"):
-#     comment = comment_input.strip()
-#     if comment:
-#         comment_count += 1
-#         st.write(f"Comment #{comment_count}: {comment}")
-#         # Save the comment, its length, and the number of likes to a CSV file
-#         with open("comments_like.csv", "a", newline="") as file:
-#             writer = csv.writer(file)
-#             writer.writerow([comment, comment.index+1, like_count])
-
 
 # File path for storing the view count
 VIEW_COUNT_FILE = "view_count.csv"
