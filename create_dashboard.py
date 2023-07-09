@@ -5,7 +5,6 @@ from PIL import Image
 import os
 from pathlib import Path
 import csv
-from streamlit_option_menu import option_menu
 
 # emojis: https://www.webfx.com/tools/emoji-cheat-sheet/
 st.set_page_config(page_title="Sales Dashboard",
