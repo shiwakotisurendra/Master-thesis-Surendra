@@ -192,11 +192,15 @@ def load_data():
 
 
 def save_comment(data, comment):
+    #data['Likes']=0
     comment_df = pd.DataFrame({'Comments': [comment]})
     data = pd.concat([data, comment_df], ignore_index=True)
     data['Comments_count'] = len(data)-1
     return data
 
+def save_like(data):
+    data.loc[0, 'Likes'] += 1
+    return data
 
 def save_data(data):
     data.to_csv("comments_like.csv", index=False)
@@ -205,26 +209,31 @@ def save_data(data):
 data = load_data()
 # Display the like button
 if 'Likes' not in data.columns:
-    data['Likes'] = 0
-#st.button("Like")
+    data['Likes']=0
 if st.button("Like"):
-    data.loc[0, 'Likes'] += 1
-
+    save_like(data)
 
 # Display the comment input
 comment = st.text_input("Add a comment:")
 if st.button("Save Comment"):
     data = save_comment(data, comment)
 
-
+# if len(data) > 0:   
 # Display the likes count, comment count, and comments
-st.write(f"Likes: {int(data.loc[0, 'Likes'])}")
+# st.write(f"Likes: {int(data.loc[0, 'Likes'])}")
+if data["Likes"].empty or data["Likes"] is None:
+    st.write("Likes:")
+else:
+    for index,value in enumerate(data['Likes'].dropna()):
+        st.write(f'Likes: {value}')
+
 st.write(f"Comment count: {len(data) - 1}")
+
 if data["Comments"].empty or data["Comments"] is None:
     st.write("Comments:")
 else:
     for index,value in enumerate(data['Comments'].dropna()):
-            st.write(f'Comments {index+1}: {value}')
+        st.write(f'Comments {index+1}: {value}')
 
 # Save data to CSV
 save_data(data)
