@@ -193,7 +193,8 @@ def load_data():
 
 @st.cache_data
 def save_comment(data, comment):
-    data = data.append({'Comments': comment}, ignore_index=True)
+    comment_df = pd.DataFrame({'Comments': [comment]})
+    data = pd.concat([data, comment_df], ignore_index=True)
     data['Comments_count'] = len(data)-1
     return data
 
@@ -220,9 +221,11 @@ if st.button("Save Comment"):
 # Display the likes count, comment count, and comments
 st.write(f"Likes: {int(data.loc[0, 'Likes'])}")
 st.write(f"Comment count: {len(data) - 1}")
-st.write("Comments:")
-for index,value in enumerate(data['Comments'].dropna()):
-        st.write(f'Comments {index+1}: {value}')
+if data["Comments"].empty or data["Comments"] is None:
+    st.write("Comments:")
+else:
+    for index,value in enumerate(data['Comments'].dropna()):
+            st.write(f'Comments {index+1}: {value}')
 
 # Save data to CSV
 save_data(data)
