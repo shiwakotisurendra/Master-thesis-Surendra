@@ -182,20 +182,70 @@ st.markdown('----')
 
 # ---- READ EXCEL ----
 # Initialize like and comment counts
-like_count = 0
-comment_count = 0
 
-# Add like button
+@st.cache_data
+def load_data():
+    try:
+        data = pd.read_csv("comments_like.csv")
+    except FileNotFoundError:
+        data = pd.DataFrame({'Likes': [0], 'Comments': [None], 'Comments_count': 0})
+    return data
+
+@st.cache_data
+def save_comment(data, comment):
+    data = data.append({'Comments': comment}, ignore_index=True)
+    data['Comments_count'] = len(data)-1
+    return data
+
+@st.cache_data
+def save_data(data):
+    data.to_csv("comments_like.csv", index=False)
+
+
+data = load_data()
+# Display the like button
+if 'Likes' not in data.columns:
+    data['Likes'] = 0
+#st.button("Like")
 if st.button("Like"):
-    like_count += 1
+    data.loc[0, 'Likes'] += 1
 
-# Add comment text input and button
-comment_input = st.text_input("Comment")
-if st.button("Add Comment"):
-    comment = comment_input.strip()
-    if comment:
-        comment_count += 1
-        st.write(f"Comment #{comment_count}: {comment}")
+
+# Display the comment input
+comment = st.text_input("Add a comment:")
+if st.button("Save Comment"):
+    data = save_comment(data, comment)
+
+
+# Display the likes count, comment count, and comments
+st.write(f"Likes: {int(data.loc[0, 'Likes'])}")
+st.write(f"Comment count: {len(data) - 1}")
+st.write("Comments:")
+for index,value in enumerate(data['Comments'].dropna()):
+        st.write(f'Comments {index+1}: {value}')
+
+# Save data to CSV
+save_data(data)
+
+# # Add like button
+# if st.button("Like"):
+#     like_count += 1
+#     with open("comments_like.csv", "a", newline="") as file:
+#         writer = csv.writer(file)
+#         writer.writerow([comment, comment.index + 1, like_count])
+
+
+# # Add comment text input and button
+# comment_input = st.text_input("Comment")
+# if st.button("Add Comment"):
+#     comment = comment_input.strip()
+#     if comment:
+#         comment_count += 1
+#         st.write(f"Comment #{comment_count}: {comment}")
+#         # Save the comment, its length, and the number of likes to a CSV file
+#         with open("comments_like.csv", "a", newline="") as file:
+#             writer = csv.writer(file)
+#             writer.writerow([comment, comment.index+1, like_count])
 
 
 # File path for storing the view count
@@ -236,36 +286,12 @@ def increment_view_count():
 view_count = increment_view_count()
 
 
-# # as a horizontal menu
-# selected = option_menu(
-#         menu_title=None,
-#         options=["Likes", "Comments", "Views"],
-#         icons=["hand-thumbs-up-fill", "pencil-fill", "eye-fill"],
-#         menu_icon="cast",
-#         default_index=0,
-#         orientation="horizontal",
-#         styles={
-#             "container": {"padding": "0!important", "background-color": "lightblue"},
-#             "icon": {"color": "orange", "font-size":"25px"},
-#             "nav-link": {
-#                 "font-size": "25px",
-#                 "text-align": "left",
-#                 "margin": "0px",
-#                 "--hover-color": "#eee",
-#             },
-#             "nav-link-selected":{"background-color": "green"},
-
-#         }
-#     )
-# Display the view count on the webpage
-# Display like and comment counts
-
 st.write("""
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/bootstrap-icons.min.css" rel="stylesheet">    
 """, unsafe_allow_html=True)
-st.write(f"Likes: <i class='bi bi-eye-fill'></i>{like_count}",unsafe_allow_html=True)
-st.write(f"Comments: <i class='bi bi-pen-fill'></i>{comment_count}",unsafe_allow_html=True)
+# st.write(f"Likes: <i class='bi bi-eye-fill'></i>{like_count}",unsafe_allow_html=True)
+# st.write(f"Comments: <i class='bi bi-pen-fill'></i>{comment_count}",unsafe_allow_html=True)
 st.write(f"Views: <i class='bi bi-eye-fill'></i>{view_count}",unsafe_allow_html=True)
 
 
