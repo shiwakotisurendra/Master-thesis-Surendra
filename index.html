@@ -1,94 +1,174 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-    <link rel="stylesheet" href="Templates/css/styles.css" />
-    <title>Geotutorial</title>
-  </head>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  
+  <title>Master Thesis - Urban Growth and UHI in Bharatpur</title>
 
-  <body style="padding:20px;">
-  <b><a href="https://thesis-surendra.streamlit.app/">Master thesis streamlit</a></b>
-<h1>Identifying urban growth patterns and urban heat island effects of Bharatpur metropolitan city using the Landsat time series imagery</h1>
-<br>
-    <hr>
-<h2>Master of Science in Geoinformatics</h2>
-    <br>
-    <hr>
-<h2>University of Münster, Germany</h2>
-    <br>
-<hr>
-<h3>Contents</h3>
-<ul>
-  <li>Abstract</li>
-  <li>Study area</li>
-  <li>Data Source</li>
-  <li>Mapping and Visualization tools</li>
-  <li>Outputs<ul>
-  <li>Land Use Land Cover Maps</li>
-    <li>Land Surface Temperature</li>
-      <li>Urban Heat Island Effect</li>
-      <li>Maps</li>
-      <li>NDVI and NDMI</li>
-  </ul></li>
-</ul>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      max-width: 900px;
+      margin: 20px auto;
+      padding: 0 15px 50px 15px;
+      color: #2c3e50;
+      background-color: #fafafa;
+      line-height: 1.6;
+    }
 
-<hr>
-<h4>Abstract</h4>
-<p align="justify">Determination of spatial extent of the earth’s features, spectral coverage, and temporal analysis of geographic features has been used to delineate the ecological degradation and distortions in the earth’s landscape with high precision using the advanced image processing sensor of satellites. Rapid population growth, urban growth, deforestation, and deterioration of the natural resources has been occurring at a very high rate causing unnatural climate changes like drought and rapid increase in the surface temperature of the earth’s surface and hence producing highly heated zones called Urban Heat Island. Urban Heat Island deteriorates the ecological process, biological habitats, soil composition, climate structure, environmental cycles, and resident health. The focus of this study project is to perform spatiotemporal analysis of the land cover categories, statistical analysis of densely accumulated Land Surface Temperature (LST), determination of the Urban Heat Island (UHI) effect, and comparative analysis of Land Cover Categories (LCC) and Urban Heat Island (UHI) effects occurring across the various regions of Bharatpur metropolitan city. Landsat 8 images were acquired from the USGS portal and then preprocessed using the GIS tool. A supervised classification algorithm was performed to derive land cover classes, while a single window algorithm and LST thresholding was used to generate different urban heat island zones. Correlation between remote sensing indices and land surface temperature was estimated to check the driving factors for Urban Heat Island. Effect in different time. It was verified by determining the land surface temperature distribution for different land cover categories. The results show that Builtup and uncultivated areas were increasing rapidly in the compensation of forest and agriculture areas. High moisture coverage in water bodies, forests, and agriculture contributed to nonUHI. Low UHI was found in sparsely distributed Builtup and uncultivated areas, while clustered Builtup and uncultivated areas were in dense UHI zones. This project will serve as a reference for spatiotemporal and statistical analysis for detecting land cover trends, Urban Heat Island occurrence and, surface temperature distribution across different land surface features.
-</p>
-<hr>
-<h4>Study Area: Bharatpur , Nepal</h4>
-<div>
-  <img src='Templates/html/images/aoi.jpg' style='position:center'>
-</div>
-<hr>
-<h4>Data Source:</h4>
-<p>
-Boundary data: Department of Survey, Nepal <br>
-Raster data: United States Geological Survey (earthexplorer) <br>
-</p>
-<hr>
-<h4>Mapping and visualization tools: </h4>
-<p>
-Python (GDAL,geopandas,numpy,rasterio,pandas,matplotlib,seaborn,pylandtemp) , QGIS
-</p>
+    a {
+      font-weight: bold;
+      color: #2980b9;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
 
-<hr>
-<h4>Land Use Land Cover Maps (2013-2021)</h4>
-<div>
-  <img src='Templates/html/images/lulc.gif' style='position:center;border:solid 2px';>
-</div>
-<br>
-    <hr>
-<h4>Land Surface Temperature (2013-2021)</h4>
-<div>
-  <img src='Templates/html/images/LSTT.gif' style='position:center;border:solid 2px';>
-</div>
-<br>
-    <hr>
-<h4>Urban Heat Island Effect (2013-2021)</h4>
-<div>
-  <img src='Templates/html/images/uhi.gif' style='position:center;border:solid 2px';>
-</div>
-<br>
-    <hr>
-<h4>Maps</h4>
-<div>
-  <img src='Templates/html/images/thesis-1.gif' height=400px style='position:center;border:solid 2px'>
-</div>
-<br>
-    <hr>
-<h4>NDVI and NDMI</h4>
-<div>
-  <img src='Templates/html/images/ndvi.gif' height=400px style='position:right;border:solid 2px' >
-  <img src='Templates/html/images/ndmi.gif' height=400px style='position:right;border:solid 2px'>
-</div>
+    h1 {
+      font-size: 1.9rem;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      color: #1f497d;
+    }
 
+    h2 {
+      font-size: 1.5rem;
+      color: #34495e;
+      border-bottom: 2px solid #2980b9;
+      padding-bottom: 6px;
+      margin-top: 40px;
+      margin-bottom: 20px;
+    }
 
-      
-    </script>
-  </body>
+    h3, h4 {
+      color: #34495e;
+      margin-top: 30px;
+      margin-bottom: 10px;
+    }
+
+    ul {
+      margin-left: 20px;
+      margin-bottom: 20px;
+    }
+
+    ul ul {
+      margin-left: 20px;
+      margin-top: 6px;
+    }
+
+    p {
+      text-align: justify;
+      margin-bottom: 25px;
+      font-size: 1.05rem;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #ddd;
+      margin: 30px 0;
+    }
+
+    img {
+      display: block;
+      margin: 0 auto 30px auto;
+      max-width: 100%;
+      border: 2px solid #2980b9;
+      border-radius: 5px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .img-row {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+
+    .img-row img {
+      max-width: 48%;
+      height: auto;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <p><a href="https://thesis-surendra.streamlit.app/" target="_blank" rel="noopener noreferrer">Master thesis Streamlit app</a></p>
+
+  <h1>Identifying Urban Growth Patterns and Urban Heat Island Effects of Bharatpur Metropolitan City Using Landsat Time Series Imagery</h1>
+
+  <hr />
+
+  <h2>Master of Science in Geoinformatics</h2>
+  <hr />
+  <h2>University of Münster, Germany</h2>
+
+  <hr />
+  <h3>Contents</h3>
+  <ul>
+    <li>Abstract</li>
+    <li>Study area</li>
+    <li>Data Source</li>
+    <li>Mapping and Visualization Tools</li>
+    <li>Outputs
+      <ul>
+        <li>Land Use Land Cover Maps</li>
+        <li>Land Surface Temperature</li>
+        <li>Urban Heat Island Effect</li>
+        <li>Maps</li>
+        <li>NDVI and NDMI</li>
+      </ul>
+    </li>
+  </ul>
+
+  <hr />
+  <h4>Abstract</h4>
+  <p>
+    Determination of spatial extent of the earth’s features, spectral coverage, and temporal analysis of geographic features has been used to delineate the ecological degradation and distortions in the earth’s landscape with high precision using the advanced image processing sensor of satellites. Rapid population growth, urban growth, deforestation, and deterioration of the natural resources has been occurring at a very high rate causing unnatural climate changes like drought and rapid increase in the surface temperature of the earth’s surface and hence producing highly heated zones called Urban Heat Island. Urban Heat Island deteriorates the ecological process, biological habitats, soil composition, climate structure, environmental cycles, and resident health. The focus of this study project is to perform spatiotemporal analysis of the land cover categories, statistical analysis of densely accumulated Land Surface Temperature (LST), determination of the Urban Heat Island (UHI) effect, and comparative analysis of Land Cover Categories (LCC) and Urban Heat Island (UHI) effects occurring across the various regions of Bharatpur metropolitan city. Landsat 8 images were acquired from the USGS portal and then preprocessed using the GIS tool. A supervised classification algorithm was performed to derive land cover classes, while a single window algorithm and LST thresholding was used to generate different urban heat island zones. Correlation between remote sensing indices and land surface temperature was estimated to check the driving factors for Urban Heat Island Effect in different time. It was verified by determining the land surface temperature distribution for different land cover categories. The results show that Builtup and uncultivated areas were increasing rapidly in the compensation of forest and agriculture areas. High moisture coverage in water bodies, forests, and agriculture contributed to non-UHI. Low UHI was found in sparsely distributed Builtup and uncultivated areas, while clustered Builtup and uncultivated areas were in dense UHI zones. This project will serve as a reference for spatiotemporal and statistical analysis for detecting land cover trends, Urban Heat Island occurrence and, surface temperature distribution across different land surface features.
+  </p>
+
+  <hr />
+  <h4>Study Area: Bharatpur, Nepal</h4>
+  <img src="Templates/html/images/aoi.jpg" alt="Study Area Bharatpur Map" />
+
+  <hr />
+  <h4>Data Source:</h4>
+  <p>
+    Boundary data: Department of Survey, Nepal<br />
+    Raster data: United States Geological Survey (EarthExplorer)
+  </p>
+
+  <hr />
+  <h4>Mapping and Visualization Tools:</h4>
+  <p>Python (GDAL, geopandas, numpy, rasterio, pandas, matplotlib, seaborn, pylandtemp), QGIS</p>
+
+  <hr />
+  <h4>Land Use Land Cover Maps (2013-2021)</h4>
+  <img src="Templates/html/images/lulc.gif" alt="Land Use Land Cover Maps" />
+
+  <hr />
+  <h4>Land Surface Temperature (2013-2021)</h4>
+  <img src="Templates/html/images/LSTT.gif" alt="Land Surface Temperature" />
+
+  <hr />
+  <h4>Urban Heat Island Effect (2013-2021)</h4>
+  <img src="Templates/html/images/uhi.gif" alt="Urban Heat Island Effect" />
+
+  <hr />
+  <h4>Maps</h4>
+  <img src="Templates/html/images/thesis-1.gif" alt="Maps" height="400" />
+
+  <hr />
+  <h4>NDVI and NDMI</h4>
+  <div class="img-row">
+    <img src="Templates/html/images/ndvi.gif" alt="NDVI" height="400" />
+    <img src="Templates/html/images/ndmi.gif" alt="NDMI" height="400" />
+  </div>
+
+</body>
 </html>
